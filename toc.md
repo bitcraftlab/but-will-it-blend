@@ -24,10 +24,10 @@ However the main focus is on enabling the students to develop and explore little
 
 | TUESDAY         | DAY 2                                              |
 |-----------------|----------------------------------------------------|
-| 09:30 - 11:00   | [programming cells](bwib-2/bwib-2-1)                 |
+| 09:30 - 11:00   | [programming cells](bwib-2/bwib-2-1)               |
 | 11:00 - 12:30   | [intro to glsl](bwib-2/bwib-2-2)                   |
-| 13:30 - 15:00   | [image processing](bwib-2/bwib-2-3)                |
-| 15:00 - 16:30   | [video processing](bwib-2/bwib-2-4)                |
+| 13:30 - 15:00   | [shader toy](bwib-2/bwib-2-3)                      |
+| 15:00 - 16:30   | [neurovision](bwib-2/bwib-2-4)                     |
 
 ## neurons
 
