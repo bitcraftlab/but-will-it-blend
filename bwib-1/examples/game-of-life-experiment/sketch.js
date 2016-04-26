@@ -19,7 +19,7 @@ function setup() {
   }
 
   // connect cells
-  for (var i = 0; i < n; i++) {
+  for (i = 0; i < n; i++) {
     cells[i].connect();
   }
 
@@ -41,7 +41,7 @@ function draw() {
   }
 
   // draw 100 cells
-  for (var i = 0; i < cells.length; i++) {
+  for (i = 0; i < cells.length; i++) {
     cells[i].draw();
   }
 
@@ -49,26 +49,26 @@ function draw() {
 
 
 function step() {
-  
+
   // update future state
   for (var i = 0; i < cells.length; i++) {
     cells[i].updateFutureState();
   }
 
   // update cells
-  for (var i = 0; i < cells.length; i++) {
+  for (i = 0; i < cells.length; i++) {
     cells[i].update();
   }
 }
 
 
 function keyTyped() {
-  
+
   // reset
   if(key == ' ') {
     resetCellStates();
   }
-  
+
   // one step
   if(key == 's') {
     step();
@@ -113,14 +113,13 @@ function Cell(xgrid, ygrid) {
   this.state = false;
 }
 
-
 Cell.prototype.setState = function(state) {
   this.state = state;
-}
+};
 
 Cell.prototype.connect = function() {
   this.neighbors = this.getNeighbors();
-}
+};
 
 Cell.prototype.drawConnections = function() {
 
@@ -142,7 +141,7 @@ Cell.prototype.drawConnections = function() {
   }
   pop();
 
-}
+};
 
 Cell.prototype.draw = function() {
 
@@ -152,7 +151,7 @@ Cell.prototype.draw = function() {
   var c = colorOff;
 
   // set color based on state
-  if (this.state == true) {
+  if (this.state === true) {
     c = colorOn;
   }
 
@@ -172,7 +171,7 @@ Cell.prototype.draw = function() {
 
   pop();
 
-}
+};
 
 
 Cell.prototype.reset = function(d) {
@@ -184,7 +183,7 @@ Cell.prototype.reset = function(d) {
   this.x = this.xgrid * d;
   this.y = this.ygrid * d;
 
-}
+};
 
 
 Cell.prototype.getNeighbors = function() {
@@ -211,7 +210,7 @@ Cell.prototype.getNeighbors = function() {
   // return them
   return neighbors;
 
-}
+};
 
 Cell.prototype.updateFutureState = function() {
 
@@ -238,11 +237,11 @@ Cell.prototype.updateFutureState = function() {
     }
   }
 
-}
+};
 
 Cell.prototype.update = function() {
   this.state = this.futureState;
-}
+};
 
 function mousePressed() {
   // show neighbors of top left cell
