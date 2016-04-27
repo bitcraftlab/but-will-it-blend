@@ -56,7 +56,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     float pulse = 0.5 + 0.5 * sin(iGlobalTime * freq);
 
     // radius pulsating between rmax and rmin
-	float r = rmin + (rmax - rmin) * pulse;
+    float r = rmin + (rmax - rmin) * pulse;
 
     vec2 topLeftCorner = vec2(10,10);
     vec2 bottomRightCorner = vec2(width - 10.0, height - 10.0);
