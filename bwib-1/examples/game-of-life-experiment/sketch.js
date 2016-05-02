@@ -1,36 +1,26 @@
-var cells = [];
-var cols = 30;
-var rows = 20;
+var colorOn = "#6f6";
+var colorOff = "#f66";
 
-var colorOn = "#0f0";
-var colorOff = "#f00";
+var d = 35;
+var timer = 0;
+
+var rows, cols, n;
+var cells = [];
+var tx, ty;
+
+var paused = false;
 
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
-  // create 100 cells
-
-  var n = rows * cols;
-  var d = width / cols;
-
-  // create cells
-  for (var i = 0; i < n; i++) {
-    cells[i] = new Cell(i % cols, floor(i / cols));
-  }
-
-  // connect cells
-  for (i = 0; i < n; i++) {
-    cells[i].connect();
-  }
-
-  // init cell positions and states
-  resetCells();
-  resetCellStates();
+  createCells();
+  resetStates();
 
 }
 
 
 function draw() {
+
 
   // black background
   background(0);
@@ -40,10 +30,26 @@ function draw() {
     cells[i].drawConnections();
   }
 
-  // draw 100 cells
+  // draw cells
   for (i = 0; i < cells.length; i++) {
     cells[i].draw();
   }
+  // user interaction
+  if (mouseIsPressed) {
+    for (var i = 0; i < cells.length; i++) {
+      if (cells[i].inside(mouseX, mouseY)) {
+        cells[i].setState(true);
+      }
+    }
+  }
+
+  // update every 500 milliseconds
+  if (!paused && millis() - timer > 500) {
+    step();
+    timer = millis();
+  };
+
+
 
 }
 
@@ -64,70 +70,105 @@ function step() {
 
 function keyTyped() {
 
-  // reset
-  if(key == ' ') {
-    resetCellStates();
+  switch (key) {
+    case 'r':
+      resetStates();
+      break;
+    case 'c':
+      clearStates();
+      break;
+    case ' ':
+      paused = !paused;
+      break;
   }
-
-  // one step
-  if(key == 's') {
-    step();
-  }
+  
 }
 
 
 function windowResized() {
-
-  // adjust the canvas size
   resizeCanvas(windowWidth, windowHeight);
-  resetCells();
-
+  createCells();
+  resetStates();
 }
 
 
 // random init
-function resetCellStates() {
+function resetStates() {
   for (var i = 0; i < cells.length; i++) {
     cells[i].setState(random() > 0.5);
   }
 }
 
 
-// resize and reposition cells to fit the new canvas
-function resetCells() {
-
-  // calculate new diameter
-  var d = width / cols;
-
-  // reset all cells to the new diameter
+// random init
+function clearStates() {
   for (var i = 0; i < cells.length; i++) {
-    cells[i].reset(d);
+    cells[i].setState(false);
+  }
+}
+
+
+function resetPositions() {
+  for (var i = 0; i < cells.length; i++) {
+    cells[i].resetPositon();
+  }
+}
+
+
+function createCells() {
+
+  cells = [];
+
+  // border size  
+  tx = (width % d) / 2;
+  ty = (height % d) / 2;
+
+  // get number of cells based on cell size
+  rows = int(height / d);
+  cols = int(width / d);
+  n = rows * cols;
+
+  // create cells
+  for (var i = 0; i < n; i++) {
+    cells[i] = new Cell(d, i % cols, int(i / cols));
+  }
+
+  // connect cells
+  for (i = 0; i < n; i++) {
+    cells[i].connect();
   }
 
 }
 
 
-function Cell(xgrid, ygrid) {
+function Cell(d, xgrid, ygrid) {
+
+  this.d = d;
+
   this.xgrid = xgrid;
   this.ygrid = ygrid;
+
   this.state = false;
+
+  this.resetPosition();
+
 }
 
+
 Cell.prototype.setState = function(state) {
-  this.state = state;
+  this.state = this.futureState = state;
 };
+
 
 Cell.prototype.connect = function() {
   this.neighbors = this.getNeighbors();
 };
 
+
 Cell.prototype.drawConnections = function() {
 
   var d1 = this.d * 0.5;
   var t = d1;
-
-  push();
-  translate(t, t);
 
   // draw connections
 
@@ -135,53 +176,46 @@ Cell.prototype.drawConnections = function() {
 
   for (var i = 0; i < n; i++) {
     var neighbor = this.neighbors[i];
-    stroke(255, 100);
-    strokeWeight(2.5);
+    stroke(100);
+    strokeWeight(0.5);
     line(this.x, this.y, neighbor.x, neighbor.y);
   }
-  pop();
 
 };
+
 
 Cell.prototype.draw = function() {
 
-  var d1 = this.d * 0.5;
-  var d2 = this.d * 0.35;
-  var t = d1;
-  var c = colorOff;
+  var d1 = this.d * 0.9;
+  var d2 = this.d * 0.8;
+  var t = this.d * 0.5;
 
   // set color based on state
+  var c1 = colorOff;
   if (this.state === true) {
-    c = colorOn;
+    c1 = colorOn;
   }
 
-  push();
-  translate(t, t);
+  // a slightly darker color
+  var c2 = lerpColor(color(c1), color(0), 0.5);
 
-
-  // draw cell itself
+  // draw the cell itself
   noStroke();
-  fill(c);
+
+  fill(c1);
   ellipse(this.x, this.y, d1, d1);
 
-
-  var darker = lerpColor(color(c), color(0), 0.5);
-  fill(darker);
+  fill(c2);
   ellipse(this.x, this.y, d2, d2);
-
-  pop();
 
 };
 
 
-Cell.prototype.reset = function(d) {
-
-  // reset diameter
-  this.d = d;
+Cell.prototype.resetPosition = function() {
 
   // reset screen position
-  this.x = this.xgrid * d;
-  this.y = this.ygrid * d;
+  this.x = tx + (this.xgrid + 0.5) * this.d;
+  this.y = ty + (this.ygrid + 0.5) * this.d;
 
 };
 
@@ -212,6 +246,7 @@ Cell.prototype.getNeighbors = function() {
 
 };
 
+
 Cell.prototype.updateFutureState = function() {
 
   var n = this.neighbors.length;
@@ -239,11 +274,12 @@ Cell.prototype.updateFutureState = function() {
 
 };
 
+
 Cell.prototype.update = function() {
   this.state = this.futureState;
 };
 
-function mousePressed() {
-  // show neighbors of top left cell
-  print(cells[1].getNeighbors().length);
+
+Cell.prototype.inside = function(x, y) {
+  return dist(this.x, this.y, mouseX, mouseY) < d / 2;
 }
