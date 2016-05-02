@@ -4,7 +4,7 @@
 *Pixel shaders or fragment shaders are used to render textures on your GPU.  
 Pixel shaders are written in GLSL*.
 
-## Intro to OpenGL + Shaders #
+## intro to OpenGL + shaders #
 
 Types of shaders
 
@@ -29,7 +29,20 @@ Types of shaders
 
 A somewhat outdate comparison of shader sandboxes can be found [here](http://perceptify.com/neurovision/2013/05/01/shader-sandboxes-compared/).
 
-### Links
+## examples
+
+### Game of Sand ###
+
+###### Sand on the Empty Plane ######
+![](examples/p5js/sand-experiment-screenshot-1.png)
+
+###### Sand on a Plane filled with one Grain per Cell #####
+![](examples/p5js/sand-experiment-screenshot-2.png)
+
+###### Sand on a Plane filled with two Grains per Cell #######
+![](examples/p5js/sand-experiment-screenshot-3.png)
+
+## Links
 
 * [GLSL Sandboxes](http://glsl.heroku.com/)
 * [WebGL Playground](http://webglplayground.net/)
