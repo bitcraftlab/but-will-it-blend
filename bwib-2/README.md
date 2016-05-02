@@ -32,14 +32,17 @@ A somewhat outdate comparison of shader sandboxes can be found [here](http://per
 ## examples
 
 ### Game of Sand ###
+###### Sand Experiment I ######
 
-###### Sand on the Empty Plane ######
+In this example all the outer cells start out empty.
 ![](examples/p5js/sand-experiment-screenshot-1.png)
 
-###### Sand on a Plane filled with one Grain per Cell #####
+###### Sand Experiment II #####
+If we fill them with a single grain, the result looks like this.
 ![](examples/p5js/sand-experiment-screenshot-2.png)
 
-###### Sand on a Plane filled with two Grains per Cell #######
+###### Sand Experiment III #######
+Things start to get interesting, once we fill them with two grains...
 ![](examples/p5js/sand-experiment-screenshot-3.png)
 
 ## Links
