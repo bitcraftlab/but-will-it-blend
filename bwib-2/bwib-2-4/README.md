@@ -1,6 +1,6 @@
 # ... but will it blend ???
 ## shaders ##
-### Playing with Neurovision ###
+### Neurovision Sandbox ###
 
 *In this part you will get to know the neurovision sandbox.*
 

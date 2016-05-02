@@ -1,9 +1,9 @@
 # but will it blend ???
-## programming cells
+## p5.js
+### game of life
 
 *In this section you will get to know the game of life, and see how we can create and connect the cells*
 
-### Game of Life ###
 
 In **Conway's Game of Life** every cell follows two simple rules:
   

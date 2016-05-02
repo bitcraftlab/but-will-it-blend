@@ -14,38 +14,38 @@ However the main focus is on enabling the students to develop and explore little
 
 ## p5.js
 
-| MONDAY          | DAY 1                                              |
-|-----------------|----------------------------------------------------|
-| 11:00 - 12:30   | [getting started](bwib-1/bwib-1-1)                 |
-| 13:30 - 15:00   | [intro to p5.js](bwib-1/bwib-1-2)                  |  
-| 15:00 - 16:30   | [javascript + oop](bwib-1/bwib-1-3)                |
+| MONDAY          | DAY 1                                               |
+|-----------------|-----------------------------------------------------|
+| 11:00 - 12:30   | getting started + [intro to p5.js](bwib-1/bwib-1-2) |
+| 13:30 - 15:00   | [javascript + oop](bwib-1/bwib-1-3)                 |  
+| 15:00 - 16:30   | [game of life](bwib-1/bwib-1-4)                     |
 
 ## shaders
 
-| TUESDAY         | DAY 2                                              |
-|-----------------|----------------------------------------------------|
-| 09:30 - 11:00   | [programming cells](bwib-2/bwib-2-1)               |
-| 11:00 - 12:30   | [intro to glsl](bwib-2/bwib-2-2)                   |
-| 13:30 - 15:00   | [shader toy](bwib-2/bwib-2-3)                      |
-| 15:00 - 16:30   | [neurovision](bwib-2/bwib-2-4)                     |
+| TUESDAY         | DAY 2                                               |
+|-----------------|-----------------------------------------------------|
+| 09:30 - 11:00   | [game of sand](bwib-2/bwib-2-1)                     |
+| 11:00 - 12:30   | [intro to glsl](bwib-2/bwib-2-2)                    |
+| 13:30 - 15:00   | [shader toy](bwib-2/bwib-2-3)                       |
+| 15:00 - 16:30   | [neurovision](bwib-2/bwib-2-4)                      |
 
 ## neurons
 
-| WEDNESDAY       | DAY 3                                              |
-|-----------------|----------------------------------------------------|
-| 09:30 - 11:00   | [intro to neural nets](bwib-3/bwib-3-1)            |
-| 11:00 - 12:30   | [random boolean networks](bwib-3/bwib-3-2)         |
-| 13:30 - 15:00   | [self organizing maps](bwib-3/bwib-3-3)            |
-| 15:00 - 16:30   | [layers of neurons](bwib-3/bwib-3-4)               |
+| WEDNESDAY       | DAY 3                                               |
+|-----------------|-----------------------------------------------------|
+| 09:30 - 11:00   | [intro to neural nets](bwib-3/bwib-3-1)             |
+| 11:00 - 12:30   | [random boolean networks](bwib-3/bwib-3-2)          |
+| 13:30 - 15:00   | [self organizing maps](bwib-3/bwib-3-3)             |
+| 15:00 - 16:30   | [layers of neurons](bwib-3/bwib-3-4)                |
 
 ## p5.js + shaders + neurons
 
-| THURSDAY        | DAY 4                                              |
-|-----------------|----------------------------------------------------|
-| 09:30 - 16:30   | *[but will it blend ???](bwib4)*                   |
+| THURSDAY        | DAY 4                                               |
+|-----------------|-----------------------------------------------------|
+| 09:30 - 16:30   | *[but will it blend ???](bwib4)*                    |
 
 
-| FRIDAY          | DAY 5                                              | 
-|-----------------|----------------------------------------------------|
-| 09:30 - 12:30   | *[but will it blend ???](bwib-5)*                  |
+| FRIDAY          | DAY 5                                               | 
+|-----------------|-----------------------------------------------------|
+| 09:30 - 12:30   | *[but will it blend ???](bwib-5)*                   |
 

@@ -1,9 +1,8 @@
 # ... but will it blend ???
-## shaders
-### Programming Cells
+## p5.js
 
 *In this part, we are going to recap our newly acquired javascript knowledge
-and create a cellular system in P5.js*
+and create a cellular automaton in P5.js*
 
 #### Game of Sand ####
 
@@ -23,8 +22,7 @@ If there's more than 4 grains of sand on a cell, distribute 4 of them evenly amo
 
 #### Game of Sand as Shader
 
-How would you implement the sand model for shadertoy?  
-(Hint: all cells can be updated in parallel).
+How would you implement the sand model on aprallel computer?
 
 ### Links
 
