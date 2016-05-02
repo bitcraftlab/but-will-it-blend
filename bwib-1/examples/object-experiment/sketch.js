@@ -3,15 +3,18 @@ var cells = [];
 var cols = 16;
 var rows = 9;
 
+var dx, dy;
+
 function setup() {
   
   createCanvas(windowWidth, windowHeight);
-  // create 100 cells
 
-  var n = rows * cols;
-  var d = width / cols;
+  // distances between cells
+  dx = width / cols;
+  dy = height / rows;
   
   // create cells
+  var n = rows * cols;
   for(var i = 0; i < n; i++) {
     cells[i] = new Cell(i % cols, floor(i / cols));
   }
@@ -33,12 +36,13 @@ function windowResized() {
 // resize and reposition cells to fit the new canvas
 function resetCells() {
   
-  // calculate new diameter
-  var d = width / cols;
+  // calculate new distances
+  dx = width / cols;
+  dy = height / rows;
   
-  // reset all cells to the new diameter
+  // reset all cells to their new positions
   for(var i = 0; i < cells.length; i++) {
-    cells[i].reset(d);
+    cells[i].reset(dx, dy);
   }
   
 }
@@ -46,7 +50,7 @@ function resetCells() {
 function draw() {
   
   // black background
-  background(0);
+  background(0, 50);
   
   // draw 100 cells
   for(var i = 0; i < cells.length; i++) {
@@ -59,34 +63,35 @@ function draw() {
 function Cell(xgrid, ygrid) {
   this.xgrid = xgrid;
   this.ygrid = ygrid;
-  this.c = color(random(255), random(255), random(255), 127);
+  this.c = color(random(255), random(255), 255);
 }
 
 
 Cell.prototype.draw = function() {
   
-  var d1 = this.d * 0.5;
-  var d2 = this.d * 0.35;
-  var t = d1;
+  var d = min(dx, dy);
+  var d1 = d * 0.9;
+  var d2 = d * 0.75;
 
   noStroke();
   fill(this.c);
-  ellipse(this.x + t, this.y + t, d1, d1);
+  ellipse(this.x + dx/2, this.y + dy/2, d1, d1);
   
   fill(0, 100);
-  ellipse(this.x + t, this.y + t, d2, d2);
+  ellipse(this.x + dx/2, this.y + dy/2, d2, d2);
 
 }
 
 
-Cell.prototype.reset = function(d) {
+Cell.prototype.reset = function(dx, dy) {
   
-  // reset diameter
-  this.d = d;
+  // reset distances
+  this.dx = dx;
+  this.dy = dy;
   
   // reset screen position
-  this.x = this.xgrid * d;
-  this.y = this.ygrid * d;
+  this.x = this.xgrid * dx;
+  this.y = this.ygrid * dy;
 
 }
 
@@ -115,8 +120,3 @@ Cell.prototype.getNeighbors = function() {
   
 }
 
-
-function mousePressed() {
-  // show neighbors of top left cell
-  print(cells[1].getNeighbors().length);
-}
