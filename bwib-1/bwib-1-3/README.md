@@ -4,12 +4,70 @@
 
 ## Javascript Basics
 
-* Control Flow
-* Data Structures
-* Functions
-* Objects in Javascript
-* Arrays in Javascript
-* Prototype Inheritance
+##### Control Flow #####
+
+* Yes / No Choices: `if`, `else`
+* Multiple Choices: `switch` `case`
+* Repetition with Index: `for` loops
+
+###### Yes / No Choices ######
+
+    if(clicked === true) {
+      print("clicked");
+    } else {
+      print("not clicked");
+    }
+
+###### Multiple Choices ######
+
+    switch(key) {
+      case '1':
+        print("pressed one");
+        break;
+      case '2':
+        print("pressed two");
+        break;
+    }
+
+
+###### Loops ######
+
+    for(var i = 0; i < 10; i++) {
+      print("number " + i);
+    }
+
+###### Objects ######
+
+* dynamic typing
+* everything is an object
+* objects can be modified on the fly
+* inspect objects on the console
+* determine object type with `typeof`
+
+###### Data Structures ######
+
+| type          | example                            |
+|---------------| ---------------------------------- |
+| arrays        | `a = [1,2,3];`                     |
+| dictionaries  | `d = ['a': 1, 'b':2];`             |
+| functions     | `f = function(x) { return x*x; };` |
+
+###### Numbers ######
+
+* Just numbers (no distinction between integers and floats)
+* **Gotacha**: make sure to use integers when indexing arrays
+
+| function                | p5       |  javascript     |
+|-------------------------| ---------|---------------- |
+| cut off fractional part | `int(x)` | `Math.trunc(x)` |
+
+The javascript functions provided by `Math` are usually a lot faster.
+
+###### Functions and Prototypes #####
+
+* when called with `new` a function return a new object.
+* inside the function we can construct the new object using `this`.
+* if we add attributes to the prototype of a function, they will be accessible from all objects created from it.
 
 ## P5 editors ##
 
@@ -61,5 +119,3 @@ This is why you might want to use your favourite editor for bigger projects.
 
 * for **fast feedback** check out the [atom-html-preview]() extension
 * for p5.js **autocomplete** you may try [processing-autocomplete](https://github.com/Stefterv/processing-autocomplete) (didn't work for me)
-
-
