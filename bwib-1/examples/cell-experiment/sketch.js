@@ -50,7 +50,7 @@ function resetCells() {
 function draw() {
   
   // black background
-  background(0, 50);
+  background(0, 0, 50);
   
   // draw 100 cells
   for(var i = 0; i < cells.length; i++) {
