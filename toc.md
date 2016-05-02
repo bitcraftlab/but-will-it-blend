@@ -2,12 +2,12 @@
 # ... but will it blend ???
 ## p5.js + shaders + neurons
 
-In this course we will get to know pixel shaders and neural networks.
-We will learn how to create then from scratch and make them run inside the browser.
+In this course you will get to know pixel shaders and neural networks.
+You will learn how to create then from scratch and make them run inside the browser.
 
-We will use sandbox environments such as *the book of shaders* and *shadertoy* to get a  basic understanding of pixel shaders and learn how to build up visual effects from  mathematical functions. Once we have mastered the basics, we will look at how we can use shaders to transform videos in realtime.
+YOu will use sandbox environments such as *the book of shaders* and *shadertoy* to get a  basic understanding of pixel shaders and learn how to build up visual effects from  mathematical functions. Once we have mastered the basics, we will look at how we can use shaders to transform videos in realtime.
 
-As part of the course we will get to know various computational systems like cellular  automata and we will learn how to implement them in javascript or as *GLSL* pixel shader. We will create self-organizing maps, also known as kohonen nets and explore their potential for creating visual user interfaces.                                        
+As part of the course you will get to know various computational systems like cellular  automata and we will learn how to implement them in javascript or as *GLSL* pixel shader. We will create self-organizing maps, also known as kohonen nets and explore their potential for creating visual user interfaces.                                        
 
 Deep-dream and style-transfer networks will also be covered shortly.
 However the main focus is on enabling the students to develop and explore little computational systems of their own.                                                  

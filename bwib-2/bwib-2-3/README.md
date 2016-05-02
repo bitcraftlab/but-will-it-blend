@@ -2,6 +2,8 @@
 ## shaders ##
 ### Playing with ShaderToy ##
 
+*In this part you will get to know shader toy, and will learn how to create simpe shader's using input from the webcam*
+
 ##### Snippets #####
 
 ###### Simple Gradient ######

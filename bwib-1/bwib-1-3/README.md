@@ -2,6 +2,8 @@
 ## p5.js
 ### javascript + OOP
 
+*In this part, you will learn the basics of javascript + how to use it in your favorite editor*
+
 ## Javascript Basics
 
 ##### Control Flow #####

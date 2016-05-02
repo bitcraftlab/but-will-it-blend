@@ -1,7 +1,8 @@
 # ... but will it blend ???
 ## shaders
 
-**pixel shaders** or **fragment shaders** are used to render textures on your GPU. Pixel shaders are written in **GLSL**.
+*Pixel shaders or fragment shaders are used to render textures on your GPU.  
+Pixel shaders are written in GLSL*.
 
 ## Intro to OpenGL + Shaders #
 
