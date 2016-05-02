@@ -23,29 +23,33 @@ It provides a lot of stuff to get you started with programming in the browser.
 
 ##### Object Experiment #####
 
-*Experiment showing how to create objects that can draw themselves.  
-Note how they adjust their position and size when the window is changed*
+*Experiment showing how to create objects that can draw themselves.*
 
 [![](object-experiment-screenshot.png)](examples/object-experiment)
 
-##### Function Experiment #####
 
-[![](function-experiment-screenshot.png)](examples/function-experiment)
+##### Cell Experiment #####
+
+*Experiment showing how to create cells. 
+Note how they adjust their position and size when the window is changed*
+
+[![](cell-experiment-screenshot.png)](examples/cell-experiment)
 
 #### Game of Life ####
 
 ##### Interactive Game of Life #####
 
-Press `r` to reset, `c` to clear, and use your mouse to draw new cells.
+Press `r` to reset, `c` to clear, and `SPACE` to pause.  
+Use your mouse to draw new cells.  
 
 [![](game-of-life-experiment-screenshot.png)](examples/game-of-life-experiment)
 
 ##### The Dark Side of Life #####
 
-Modifying the `draw()` and `drawConnections()` functions to create a different look.  
-You can use the mouse to explore the structure.  
-You can press `l` to toggle the lights.
+Modifying the `draw()` and `drawConnections()` functions to create a different look.
 
+Press `l` to toggle the lights.  
+You can use the mouse to explore the structure.  
 
 [![](the-dark-side-of-life-screenshot.png)](examples/the-dark-side-of-life)
 
