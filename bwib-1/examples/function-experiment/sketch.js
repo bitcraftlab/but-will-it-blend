@@ -22,7 +22,6 @@ function draw() {
 }
 
 function Cell() {
-
   this.c = color(random(255), random(255), random(255), 127);
   this.x = random(0, width);
   this.y = random(0, height);
